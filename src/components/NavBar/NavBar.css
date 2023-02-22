@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Montserrat:wght@100;300;400&display=swap');
+
+.gFontA{
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+}
+.gFontA:hover{
+    color: black;
+}
+.gFontM{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.cartWidget{
+    color: black;
+    font-family: bold;
+}
+.cartWidget:hover{
+    color: black;
+}
