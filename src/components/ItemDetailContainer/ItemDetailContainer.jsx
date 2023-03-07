@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
 import { gFetch } from "../../utils/gFetch"
 import ItemCount from "../ItemCount/ItemCount"
 
@@ -9,7 +10,7 @@ const ItemDetailContainer = () => {
 
     const [product, setProductsDetail] = useState({})
     const { idProduct } = useParams()
-    
+    const {addCart, cartList} = useContext(CartContext)
 
     useEffect(() => {
         if (idProduct) {
@@ -18,11 +19,11 @@ const ItemDetailContainer = () => {
         }
     }, [idProduct])
 
-    function onAdd(){
-        console.log('2')
-        console.log(product);
+    function onAdd(amount=2){
+        console.log(amount)
+        addCart({...product, amount})
     }
-
+    console.log('cartList: ',cartList);
     return (
         <div className="d-flex justify-content-center flex-wrap m-5 text-center" >
             <div className="card w-25 m-2">
