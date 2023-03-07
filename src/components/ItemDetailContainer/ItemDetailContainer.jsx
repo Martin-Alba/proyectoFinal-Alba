@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { gFetch } from "../../utils/gFetch"
+import ItemCount from "../ItemCount/ItemCount"
 
 
 
@@ -8,6 +9,7 @@ const ItemDetailContainer = () => {
 
     const [product, setProductsDetail] = useState({})
     const { idProduct } = useParams()
+    
 
     useEffect(() => {
         if (idProduct) {
@@ -15,6 +17,11 @@ const ItemDetailContainer = () => {
                 .then(resp => setProductsDetail(resp.find(products => products.id === idProduct)))
         }
     }, [idProduct])
+
+    function onAdd(){
+        console.log('2')
+        console.log(product);
+    }
 
     return (
         <div className="d-flex justify-content-center flex-wrap m-5 text-center" >
@@ -31,6 +38,7 @@ const ItemDetailContainer = () => {
                     <button className="btn btn-outline-dark w-75 m-2">Comprar</button>
                 </div>
             </div>
+            <ItemCount initial={1} stock={10} onAdd={onAdd}/>
         </div>
     )
 
