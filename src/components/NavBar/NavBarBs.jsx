@@ -16,7 +16,7 @@ function NavBarBs() {
                         <NavLink className={({isActive}) => isActive ? 'btn btn-dark' : 'btn btn-outline'} to='/categoria/cursos'>CURSOS</NavLink>
                         <NavLink className={({isActive}) => isActive ? 'btn btn-dark' : 'btn btn-outline'} to='/categoria/seminarios'>SEMINARIOS</NavLink>
                         <NavLink className={({isActive}) => isActive ? 'btn btn-dark' : 'btn btn-outline'} to='/categoria/talleres'>TALLERES</NavLink>
-                        <NavLink to='*' className='d-flex flex-row ms-4 cartWidget'>
+                        <NavLink to='/cart' className='d-flex flex-row ms-4 cartWidget'>
                             <CartWidget />1
                         </NavLink>
                     </Nav>

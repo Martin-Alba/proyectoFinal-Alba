@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { CartContext } from "../../context/CartContext"
+import { useCartContext } from "../../context/CartContext"
 import { gFetch } from "../../utils/gFetch"
 import ItemCount from "../ItemCount/ItemCount"
 
@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
     const [product, setProductsDetail] = useState({})
     const { idProduct } = useParams()
-    const {addCart, cartList} = useContext(CartContext)
+    const {addCart, cartList} = useCartContext()
 
     useEffect(() => {
         if (idProduct) {
